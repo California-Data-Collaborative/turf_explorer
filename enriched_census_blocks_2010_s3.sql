@@ -111,7 +111,7 @@ SELECT
 	CASE 
 		WHEN turf_area_sf = 0 THEN null
 		WHEN total_turf_removed_sf IS null THEN 0
-		ELSE total_turf_removed_sf/turf_area_sf
+		ELSE total_turf_removed_sf/(turf_area_sf+total_turf_removed_sf)
 	END turf_removed_percent_of_turf_area,
 	CASE
 		WHEN total_area_sf = 0 THEN null
